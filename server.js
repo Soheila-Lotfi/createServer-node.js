@@ -17,5 +17,11 @@ function handleRequest(request, response) {
         response.writeHead(200, { "Content-Type": "text/html" });
         response.end(data);
       });
+    case "/movie":
+      return fs.readFile(__dirname, "/movies.html", function(err, data) {
+        if (err) throw err;
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.end(data);
+      });
   }
 }
