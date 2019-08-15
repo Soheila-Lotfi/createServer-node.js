@@ -23,5 +23,7 @@ function handleRequest(request, response) {
         response.writeHead(200, { "Content-Type": "text/html" });
         response.end(data);
       });
+
+    // default to rendering index.html, if none of above cases are hit
   }
 }
