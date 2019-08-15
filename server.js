@@ -25,5 +25,11 @@ function handleRequest(request, response) {
       });
 
     // default to rendering index.html, if none of above cases are hit
+    default:
+      return fs.readFile(_dirname, "index.html", function(err, data) {
+        if (err) throw err;
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.end(data);
+      });
   }
 }
