@@ -4,7 +4,7 @@ var fs = require("fs");
 //----create a server
 var port = 8080;
 
-var server = http.creatServer(hanndleRequest);
+var server = http.createServer(handleRequest);
 
 //----handleRequest function-----
 function handleRequest(request, response) {
@@ -33,3 +33,7 @@ function handleRequest(request, response) {
       });
   }
 }
+
+server.listen(port, function() {
+  console.log("server is listening at port: " + port);
+});
